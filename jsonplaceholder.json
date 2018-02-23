@@ -1,0 +1,59 @@
+{
+	"info": {
+		"name": "jsonplaceholder.com",
+		"_postman_id": "aca2f14a-b9f7-8688-4ef6-2114eaa4ea65",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://jsonplaceholder.typicode.com/posts?userId=1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9f93bc58-c033-4b83-b1c4-7762a4b83529",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"qui est esse\");",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts?userId=1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
